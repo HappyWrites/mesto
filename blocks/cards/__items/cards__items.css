@@ -1,0 +1,15 @@
+.cards__items {
+  margin: 36px 20px 48px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
+  gap: 20px 20px;
+}
+
+@media screen and (min-width: 1228px) {
+  .cards__items {
+    margin: 0 200px 67px;
+    gap: 20px 17px;
+  }
+}

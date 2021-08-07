@@ -1,0 +1,11 @@
+.profile__edit-name {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .profile__edit-name {
+    margin-top: 0;
+  }
+}

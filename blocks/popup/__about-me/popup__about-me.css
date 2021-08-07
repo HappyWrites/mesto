@@ -1,0 +1,25 @@
+.popup__about-me {
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  text-align: left;
+  border: none;
+  border-bottom: 1px solid #000000;
+  padding: 0;
+  margin: 0;
+  margin-top: 26px;
+  padding-bottom: 13px;
+  width: 100%;
+}
+
+.popup__about-me:focus {
+  border: 3px solid rgb(0, 191, 255);
+} 
+
+@media screen and (min-width: 390px) {
+  .popup__about-me {
+    margin-top: 27px;
+  }
+}

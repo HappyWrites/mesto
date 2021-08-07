@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MESTO</title>
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <a href="#" target="_blank">
+        <img src="./images/logo.png" class="logo logo__header" alt="Логотип">
+      </a>
+    </header>
+
+    <main class="content">
+      <section class="profile">
+        <div class="profile__data">
+          <div class="profile__avatar">
+            <img class="profile__image" src="./images/avatar.png" alt="аватар">
+          </div>
+          <div class="profile__info">
+            <div class="profile__edit-name">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit" type="button"></button>
+            </div>
+            <p class="profile__about-me">Исследователь океана</p>
+          </div>
+        </div>
+        <button class="profile__add" type="button"></button>
+      </section>
+
+      <section class="cards">
+        <ul class="cards__items">
+          <li class="cards__item">
+            <img src="./images/баган мьянма.jpg" alt="Мьянма" class="cards__image">
+            <div class="cards__content">
+              <h2 class="cards__title">Баган-Мьянма </h2>
+              <div class="cards__like"></div>
+            </div>
+          </li>
+          <li class="cards__item">
+            <img src="./images/бухта навагио греция.jpg" alt="Бухта Навагио" class="cards__image">
+            <div class="cards__content">
+              <h2 class="cards__title">Бухта Навагио в Греции</h2>
+              <div class="cards__like"></div>
+            </div>
+          </li>
+          <li class="cards__item">
+            <img src="./images/бамбуковый лес.jpg" alt="Бамбуковый лес" class="cards__image">
+            <div class="cards__content">
+              <h2 class="cards__title">Бамбуковый лес в Китае</h2>
+              <div class="cards__like"></div>
+            </div>
+          </li>
+          <li class="cards__item">
+            <img src="./images/ледниковое озеро канада.jpg" alt="Ледниковое озеро" class="cards__image">
+            <div class="cards__content">
+              <h2 class="cards__title">Ледниковое озеро в Канаде</h2>
+              <div class="cards__like"></div>
+            </div>
+          </li>
+          <li class="cards__item">
+            <img src="./images/древний город петра иордания.jpg" alt="Древний город" class="cards__image">
+            <div class="cards__content">
+              <h2 class="cards__title">Древний город Петра в Иордании</h2>
+              <div class="cards__like"></div>
+            </div>
+          </li>
+          <li class="cards__item">
+            <img src="./images/санторини греция.jpg" alt="Санторини" class="cards__image">
+            <div class="cards__content">
+              <h2 class="cards__title">Санторини-Греция</h2>
+              <div class="cards__like"></div>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__author">&copy; 2020 Mesto Russia</p>
+    </footer>
+
+    <div class="popup">
+      <form class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <input class="popup__name" type="text" placeholder="Жак-Ив Кусто" name="name" value="Жак-Ив Кусто">
+        <input class="popup__about-me" type="text" placeholder="Исследователь океана" name="about-me"
+          value="Исследователь океана">
+        <button class="popup__save" type="submit">Сохранить</button>
+      </form>
+    </div>
+  </div>
+  <script src="./vendor/index.js" defer></script>
+</body>
