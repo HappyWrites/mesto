@@ -3,7 +3,7 @@
   border-radius: 10px;
   width: calc(100% - 44px);
   position: relative;
-  margin: 0 0 87px;
+  margin: 0 0 94px;
   padding: 0 22px;
   max-width: calc(430px - 72px);
 }
@@ -17,6 +17,6 @@
 @media screen and (min-width: 768px) {
   .popup__container {
     margin: 0;
-    bottom: 54px;
+    bottom: 30px;
   }
 }

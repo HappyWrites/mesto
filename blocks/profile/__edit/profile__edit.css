@@ -4,6 +4,7 @@
   border: 1px solid #FFFFFF;
   background-repeat: no-repeat;
   background-color: black;
+  background-size: 8px 8px;
   width: 18px;
   height: 18px;
   padding: 0;
@@ -21,5 +22,6 @@
     width: 24px;
     height: 24px;
     margin-left: 18px;
+    background-size: 10px 10px;
   }
 }

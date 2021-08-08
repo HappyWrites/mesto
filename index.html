@@ -12,16 +12,14 @@
   <div class="page">
     <header class="header">
       <a href="#" target="_blank">
-        <img src="./images/logo.png" class="header__logo" alt="Логотип">
+        <img src="./images/logo-svg.svg" class="header__logo" alt="Логотип">
       </a>
     </header>
 
     <main class="content">
       <section class="profile">
         <div class="profile__data">
-          <div class="profile__avatar">
-            <img class="profile__image" src="./images/avatar.png" alt="аватар">
-          </div>
+          <img class="profile__image" src="./images/avatar.png" alt="аватар">
           <div class="profile__info">
             <div class="profile__edit-name">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -36,45 +34,45 @@
       <section class="cards">
         <ul class="cards__items">
           <li class="cards__item">
-            <img src="./images/баган мьянма.jpg" alt="Мьянма" class="cards__image">
+            <img src="./images/баганмьянма.jpg" alt="Мьянма" class="cards__image">
             <div class="cards__content">
               <h2 class="cards__title">Баган-Мьянма </h2>
-              <div class="cards__like"></div>
+              <button class="cards__like" type="button"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/бухта навагио греция.jpg" alt="Бухта Навагио" class="cards__image">
+            <img src="./images/бухтанавагиогреция.jpg" alt="Бухта Навагио" class="cards__image">
             <div class="cards__content">
               <h2 class="cards__title">Бухта Навагио в Греции</h2>
-              <div class="cards__like"></div>
+              <button class="cards__like" type="button"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/бамбуковый лес.jpg" alt="Бамбуковый лес" class="cards__image">
+            <img src="./images/бамбуковыйлес.jpg" alt="Бамбуковый лес" class="cards__image">
             <div class="cards__content">
               <h2 class="cards__title">Бамбуковый лес в Китае</h2>
-              <div class="cards__like"></div>
+              <button class="cards__like" type="button"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/ледниковое озеро канада.jpg" alt="Ледниковое озеро" class="cards__image">
+            <img src="./images/канада.jpg" alt="Ледниковое озеро" class="cards__image">
             <div class="cards__content">
               <h2 class="cards__title">Ледниковое озеро в Канаде</h2>
-              <div class="cards__like"></div>
+              <button class="cards__like" type="button"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/древний город петра иордания.jpg" alt="Древний город" class="cards__image">
+            <img src="./images/иордания.jpg" alt="Древний город" class="cards__image">
             <div class="cards__content">
               <h2 class="cards__title">Древний город Петра в Иордании</h2>
-              <div class="cards__like"></div>
+              <button class="cards__like" type="button"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img src="./images/санторини греция.jpg" alt="Санторини" class="cards__image">
+            <img src="./images/греция.jpg" alt="Санторини" class="cards__image">
             <div class="cards__content">
               <h2 class="cards__title">Санторини-Греция</h2>
-              <div class="cards__like"></div>
+              <button class="cards__like" type="button"></button>
             </div>
           </li>
         </ul>
@@ -85,16 +83,18 @@
     </footer>
 
     <div class="popup">
-      <form class="popup__container">
+      <form class="popup__container" name="container">
         <button class="popup__close" type="button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="popup__name" type="text" placeholder="Жак-Ив Кусто" name="name" value="Жак-Ив Кусто">
-        <input class="popup__about-me" type="text" placeholder="Исследователь океана" name="about-me"
-          value="Исследователь океана">
+        <input class="popup__input popup__input_type_name" type="text" placeholder="Жак-Ив Кусто" name="name"
+          value="Жак-Ив Кусто">
+        <input class="popup__input popup__input_type_about-me" type="text" placeholder="Исследователь океана"
+          name="about-me" value="Исследователь океана">
         <button class="popup__save" type="submit">Сохранить</button>
       </form>
     </div>
   </div>
-  <script src="./vendor/index.js" defer></script>
+  <script src="./scripts/index.js" defer></script>
 </body>
+
 </html>

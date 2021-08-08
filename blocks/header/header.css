@@ -1,9 +1,9 @@
 .header {
-  margin: 28px 0 27px 27px;
+  margin: 28px 0 0 27px;
 }
 
 @media screen and (min-width: 1228px) {
   .header {
-    margin: 45px 200px 41px;
+    margin: 45px 0 0 200px;
   }
 }
