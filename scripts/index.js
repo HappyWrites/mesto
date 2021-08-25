@@ -10,13 +10,13 @@ const jobInput = document.querySelector('.popup__input_type_about-me');
 const cardsList = document.querySelector('.cards__items');
 const cardsListTemplate = document.getElementById('cards-list-template');
 const addButton = document.querySelector('.profile__add');
-const popupAdd = document.querySelector('.popup__add');
+const popupAdd = document.querySelector('.popup_type_add');
 const formAdd = document.querySelector('.popup__container_type_add');
 const placeInput = document.querySelector('.popup__input_type_place');
 const linkInput = document.querySelector('.popup__input_type_link');
 const createButton = document.querySelector('.popup__save_type_add');
 const closeButtonAdd = document.querySelector('.popup__close-add');
-const popupImage = document.querySelector('.popup__image');
+const popupImage = document.querySelector('.popup_type_image');
 const closeButtonPopupImage = document.querySelector('.popup__close_type_image');
 
 const initialCards = [
@@ -29,8 +29,8 @@ const initialCards = [
     link: 'https://images.unsplash.com/photo-1629233796529-4a04bf1aee52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
   },
   {
-    name: 'Германия',
-    link: 'https://images.unsplash.com/photo-1629373270039-39bd6f1446e2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=282&q=80'
+    name: 'Швейцария',
+    link: 'https://images.unsplash.com/photo-1622115064943-f3cdd1af1b17?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
   },
   {
     name: 'Южная Америка',

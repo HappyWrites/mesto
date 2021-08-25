@@ -1,16 +1,22 @@
 .popup__container_type_image {
-  background-color: black;
+  background-color: transparent;
   width: 100%;
   object-fit: cover;
   object-position: center;
   padding: 0;
   border-radius: 0;
   top: 15px;
-  max-width: 75vw;
+  max-width: calc(100% - 40px);
+}
+
+@media screen and (min-width: 768px) {
+  .popup__container_type_image {
+    max-width: calc(100% - 360px);
+  }
 }
 
 @media screen and (min-width: 1228px) {
   .popup__container_type_image {
-    max-width: calc(100% - 385px);
+    max-width: calc(100% - 790px);
   }
 }
