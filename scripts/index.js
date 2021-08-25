@@ -1,10 +1,10 @@
-const popup = document.querySelector('.popup')
-const popupButton = document.querySelector('.profile__edit');
+const popupEditProfile = document.querySelector('.popup_type_edit-profile')
+const popupButtonEditProfile = document.querySelector('.profile__edit');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__about-me');
-const closeButton = popup.querySelector('.popup__close');
-const saveButton = popup.querySelector('.popup__save');
-const formElement = document.querySelector('.popup__container');
+const closeButton = document.querySelector('.popup__close');
+const saveButton = document.querySelector('.popup__save');
+const formElementEditProfile = document.querySelector('.popup__container_type_edit-profile');
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_about-me');
 const cardsList = document.querySelector('.cards__items');
@@ -18,72 +18,40 @@ const createButton = document.querySelector('.popup__save_type_add');
 const closeButtonAdd = document.querySelector('.popup__close-add');
 const popupImage = document.querySelector('.popup_type_image');
 const closeButtonPopupImage = document.querySelector('.popup__close_type_image');
+const popupPicture = popupImage.querySelector('.popup__picture');
+const popupTitleImage = popupImage.querySelector('.popup__title');
 
-const initialCards = [
-  {
-    name: 'Швейцария',
-    link: 'https://images.unsplash.com/photo-1626515728846-d09aacfee23d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80'
-  },
-  {
-    name: 'Америка',
-    link: 'https://images.unsplash.com/photo-1629233796529-4a04bf1aee52?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
-  },
-  {
-    name: 'Швейцария',
-    link: 'https://images.unsplash.com/photo-1622115064943-f3cdd1af1b17?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
-  },
-  {
-    name: 'Южная Америка',
-    link: 'https://images.unsplash.com/photo-1628435444324-b0856c6f7018?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
-  },
-  {
-    name: 'Исландия',
-    link: 'https://images.unsplash.com/photo-1628632577468-645afac21c82?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80'
-  },
-  {
-    name: 'Турция',
-    link: 'https://images.unsplash.com/photo-1629146460443-6edd470c8bc2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=333&q=80'
-  }
-];
+//открытие и закрытие попапов//
 
-//открытие и закрытие формы редактирования профиля//
-
-function openPopup() {
+function openPopup(popup) {
   popup.classList.add('popup_is-opened');
+}
+
+function closePopup(popup) {
+  popup.classList.remove('popup_is-opened');
+}
+
+//передача данных полей ввода//
+
+function takeDataProfile() {
+  openPopup(popupEditProfile);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
 }
 
-function closedPopup() {
-  popup.classList.remove('popup_is-opened');
-}
-
-popupButton.addEventListener('click', openPopup);
-closeButton.addEventListener('click', closedPopup);
+popupButtonEditProfile.addEventListener('click', takeDataProfile);
+closeButton.addEventListener('click', () => closePopup(popupEditProfile));
 
 //редактирование профиля//
 
-function formSubmitHandler(evt) {
+function editProfile(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  closedPopup();
+  closePopup(popupEditProfile);
 }
 
-formElement.addEventListener('submit', formSubmitHandler);
-
-//открытие и закрытие формы добавления карточки//
-
-function openPopupAdd() {
-  popupAdd.classList.add('popup_is-opened');
-}
-
-function closePopupAdd() {
-  popupAdd.classList.remove('popup_is-opened');
-}
-
-addButton.addEventListener('click', openPopupAdd);
-closeButtonAdd.addEventListener('click', closePopupAdd);
+formElementEditProfile.addEventListener('submit', editProfile);
 
 //инициализация карточки//
 
@@ -95,7 +63,7 @@ function createCards(name, link) {
   newCards.querySelector('.cards__like').addEventListener('click', pressLike);
   newCards.querySelector('.cards__trash').addEventListener('click', deleteCard);
   cardLink.addEventListener('click', () => handlePreviewPicture(cardName, cardLink));
-  closeButtonPopupImage.addEventListener('click', closePopupImage);
+
 
   cardName.textContent = name;
   cardLink.src = link;
@@ -112,6 +80,8 @@ function initCards(card) {
 initialCards.forEach(card => initCards(card));
 
 //добавление карточки через форму//
+addButton.addEventListener('click', () => openPopup(popupAdd));
+closeButtonAdd.addEventListener('click', () => closePopup(popupAdd));
 
 function addCard(evt) {
   evt.preventDefault();
@@ -119,7 +89,7 @@ function addCard(evt) {
   const cardObject = { name: placeInput.value, link: linkInput.value };
   initCards(cardObject);
   formAdd.reset();
-  closePopupAdd();
+  closePopup(popupAdd);
 }
 
 formAdd.addEventListener('submit', addCard);
@@ -138,67 +108,11 @@ function deleteCard(evt) {
 
 //открытие и закрытие попапа с картинкой//
 
-function openPopupImage() {
-  popupImage.classList.add('popup_is-opened');
-}
-
-function closePopupImage() {
-  popupImage.classList.remove('popup_is-opened');
-}
-
 function handlePreviewPicture(title, img) {
-  openPopupImage();
-  popupImage.querySelector('.popup__title').textContent = title.textContent;
-  popupImage.querySelector('.popup__picture').alt = img.alt;
-  popupImage.querySelector('.popup__picture').src = img.src;
+  openPopup(popupImage);
+  popupTitleImage.textContent = title.textContent;
+  popupPicture.alt = img.alt;
+  popupPicture.src = img.src;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+closeButtonPopupImage.addEventListener('click', () => closePopup(popupImage));

@@ -40,13 +40,13 @@
       <p class="footer__author">&copy; 2021 Anastasia Nazarova</p>
     </footer>
 
-    <section class="popup ">
-      <form class="popup__container" name="name-job">
+    <section class="popup popup_type_edit-profile">
+      <form class="popup__container popup__container_type_edit-profile" name="name-job">
         <button class="popup__close" type="button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <input class="popup__input popup__input_type_name" type="text" placeholder="Жак-Ив Кусто" name="name"
+        <input class="popup__input popup__input_type_name" required type="text" placeholder="Жак-Ив Кусто" name="name"
           value="Жак-Ив Кусто">
-        <input class="popup__input popup__input_type_about-me" type="text" placeholder="Исследователь океана"
+        <input class="popup__input popup__input_type_about-me" required type="text" placeholder="Исследователь океана"
           name="about-me" value="Исследователь океана">
         <button class="popup__save" type="submit">Сохранить</button>
       </form>
@@ -56,9 +56,9 @@
       <form class="popup__container popup__container_type_add" name="name-link">
         <button class="popup__close popup__close-add" type="button"></button>
         <h3 class="popup__title">Новое место</h3>
-        <input class="popup__input popup__input_type_name popup__input_type_place" type="text" placeholder="Название"
-          name="place" value="Название">
-        <input class="popup__input popup__input_type_about-me popup__input_type_link" type="text"
+        <input class="popup__input popup__input_type_name popup__input_type_place" required type="text"
+          placeholder="Название" name="place" value="Название">
+        <input class="popup__input popup__input_type_about-me popup__input_type_link" required type="url"
           placeholder="Ссылка на картинку" name="link" value="Ссылка на картинку">
         <button class="popup__save popup__save_type_add" type="submit">Создать</button>
       </form>
@@ -87,6 +87,7 @@
       <button class="cards__trash" type="button"></button>
     </li>
   </template>
+  <script src="./scripts/cards.js" defer></script>
   <script src="./scripts/index.js" defer></script>
 </body>
 
