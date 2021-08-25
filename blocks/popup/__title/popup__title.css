@@ -6,14 +6,13 @@
   letter-spacing: 0em;
   text-align: left;
   margin: 0;
-  padding: 0;
-  margin-top: 25px;
+  padding: 24px 0 0;
 }
 
 @media screen and (min-width: 768px) {
   .popup__title {
     font-size: 24px;
     line-height: 29px;
-    margin-top: 33px;
+    padding: 30px 0 0;
   }
 }

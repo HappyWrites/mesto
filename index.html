@@ -33,56 +33,14 @@
 
       <section class="cards">
         <ul class="cards__items">
-          <li class="cards__item">
-            <img src="./images/баганмьянма.jpg" alt="Мьянма" class="cards__image">
-            <div class="cards__content">
-              <h2 class="cards__title">Баган-Мьянма </h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img src="./images/бухтанавагиогреция.jpg" alt="Бухта Навагио" class="cards__image">
-            <div class="cards__content">
-              <h2 class="cards__title">Бухта Навагио в Греции</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img src="./images/бамбуковыйлес.jpg" alt="Бамбуковый лес" class="cards__image">
-            <div class="cards__content">
-              <h2 class="cards__title">Бамбуковый лес в Китае</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img src="./images/канада.jpg" alt="Ледниковое озеро" class="cards__image">
-            <div class="cards__content">
-              <h2 class="cards__title">Ледниковое озеро в Канаде</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img src="./images/иордания.jpg" alt="Древний город" class="cards__image">
-            <div class="cards__content">
-              <h2 class="cards__title">Древний город Петра в Иордании</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img src="./images/греция.jpg" alt="Санторини" class="cards__image">
-            <div class="cards__content">
-              <h2 class="cards__title">Санторини-Греция</h2>
-              <button class="cards__like" type="button"></button>
-            </div>
-          </li>
         </ul>
       </section>
     </main>
     <footer class="footer">
-      <p class="footer__author">&copy; 2020 Mesto Russia</p>
+      <p class="footer__author">&copy; 2021 Anastasia Nazarova</p>
     </footer>
 
-    <div class="popup">
+    <section class="popup ">
       <form class="popup__container" name="name-job">
         <button class="popup__close" type="button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
@@ -92,8 +50,41 @@
           name="about-me" value="Исследователь океана">
         <button class="popup__save" type="submit">Сохранить</button>
       </form>
-    </div>
+    </section>
+
+    <section class="popup popup__add">
+      <form class="popup__container popup__container_type_add" name="name-link">
+        <button class="popup__close popup__close-add" type="button"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <input class="popup__input popup__input_type_name popup__input_type_place" type="text" placeholder="Название"
+          name="place" value="Название">
+        <input class="popup__input popup__input_type_about-me popup__input_type_link" type="text"
+          placeholder="Ссылка на картинку" name="link" value="Ссылка на картинку">
+        <button class="popup__save popup__save_type_add" type="submit">Создать</button>
+      </form>
+    </section>
+
+    <section class="popup popup__image">
+      <div class="popup__container popup__container_type_image">
+        <button class="popup__close popup__close_type_image" type="button"></button>
+        <img
+          src="https://images.unsplash.com/photo-1626515728846-d09aacfee23d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80"
+          alt="Швейцария" class="popup__picture">
+        <h3 class="popup__title popup__title_type_image">Швейцария</h3>
+      </div>
+    </section>
   </div>
+
+  <template id="cards-list-template">
+    <li class="cards__item">
+      <img src="" alt="" class="cards__image">
+      <div class="cards__content">
+        <h2 class="cards__title"></h2>
+        <button class="cards__like" type="button"></button>
+      </div>
+      <button class="cards__trash" type="button"></button>
+    </li>
+  </template>
   <script src="./scripts/index.js" defer></script>
 </body>
 
