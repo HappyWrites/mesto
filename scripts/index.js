@@ -2,7 +2,7 @@ const popupEditProfile = document.querySelector('.popup_type_edit-profile')
 const popupButtonEditProfile = document.querySelector('.profile__edit');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__about-me');
-const closeButton = document.querySelector('.popup__close');
+const closeButtonEditProfile = document.querySelector('.popup__close');
 const saveButton = document.querySelector('.popup__save');
 const formElementEditProfile = document.querySelector('.popup__container_type_edit-profile');
 const nameInput = document.querySelector('.popup__input_type_name');
@@ -40,7 +40,7 @@ function takeDataProfile() {
 }
 
 popupButtonEditProfile.addEventListener('click', takeDataProfile);
-closeButton.addEventListener('click', () => closePopup(popupEditProfile));
+closeButtonEditProfile.addEventListener('click', () => closePopup(popupEditProfile));
 
 //редактирование профиля//
 
