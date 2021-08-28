@@ -116,3 +116,22 @@ function handlePreviewPicture(title, img) {
 }
 
 closeButtonPopupImage.addEventListener('click', () => closePopup(popupImage));
+
+//закрытие попапа кликом на оверлей//
+
+function closePopupClickOverlay(evt) {
+  if (evt.target.classList.contains('popup_is-opened')) {
+    closePopup(evt.target);
+}
+};
+
+popupEditProfile.addEventListener('click', closePopupClickOverlay);
+popupAdd.addEventListener('click', closePopupClickOverlay);
+popupImage.addEventListener('click', closePopupClickOverlay);
+
+//закрытие попапа на ESC//
+document.addEventListener('keydown', function(evt) {
+    if (evt.key === 'Escape') {
+    closePopup(document.querySelector('.popup_is-opened'))
+  }
+});
