@@ -8,7 +8,7 @@ const formElementEditProfile = document.querySelector('.popup__container_type_ed
 const nameInput = document.querySelector('.popup__input_type_name');
 const jobInput = document.querySelector('.popup__input_type_about-me');
 const cardsList = document.querySelector('.cards__items');
-const cardTemplate = document.getElementById('cards-list-template');
+const cardTemplate = document.querySelector('#cards-list-template').content
 const addButton = document.querySelector('.profile__add');
 const popupAdd = document.querySelector('.popup_type_add');
 const formAdd = document.querySelector('.popup__container_type_add');
@@ -59,7 +59,7 @@ formElementEditProfile.addEventListener('submit', editProfile);
 //инициализация карточки//
 
 function createCard(name, link) {
-  const newCard = cardTemplate.content.firstElementChild.cloneNode(true);
+  const newCard = cardTemplate.querySelector('.cards__item').cloneNode(true);
   const cardName = newCard.querySelector('.cards__title');
   const cardLink = newCard.querySelector('.cards__image');
 
