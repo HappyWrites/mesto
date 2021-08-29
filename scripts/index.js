@@ -36,10 +36,10 @@ function closePopup(popup) {
 //передача данных полей ввода//
 
 function openPopupEditProfile() {
-  resetErrorForm(popupEditProfile);
   openPopup(popupEditProfile);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
+  resetErrorForm(popupEditProfile, initialPar);
 }
 
 popupButtonEditProfile.addEventListener('click', openPopupEditProfile);
@@ -85,10 +85,11 @@ initialCards.forEach(card => renderCard(card));
 
 //открытие попапа с контентом//
 const openPopupAddContent = () => {
+  openPopup(popupAdd);
   placeInput.value = '';
   linkInput.value = '';
-  resetErrorForm(popupAdd);
-  openPopup(popupAdd);
+  resetErrorForm(popupAdd, initialPar);
+
 }
 
 //добавление карточки через форму//
@@ -149,16 +150,11 @@ function closePopupEsc(evt) {
   }
 };
 
-//сброс значений открываемого попапа//
-function resetErrorForm(form) {
-  const errorList = Array.from(form.querySelectorAll('.popup__input-error'));
-  errorList.forEach((errorElement) => {
-    errorElement.textContent = '';
-  });
-  const inputList = Array.from(form.querySelectorAll('.popup__input'));
-  inputList.forEach((inputElement) => {
-    inputElement.classList.remove('popup__input_type_error');
-  });
-  const saveButton = form.querySelector('.popup__save');
-  toggleButtonState(inputList, saveButton, 'popup__save_type_inactive');
+function resetErrorForm(form, validationParam) {
+  const inputList = Array.from(form.querySelectorAll(validationParam.inputSelector));
+  const submitButton = form.querySelector(validationParam.submitButtonSelector);
+  inputList.forEach(function (inputElement) {
+    hideInputError(form, inputElement, initialPar);
+  })
+  toggleButtonState(inputList, submitButton, validationParam.inactiveButtonClass);
 };
