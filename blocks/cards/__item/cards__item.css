@@ -6,4 +6,9 @@
   border-radius: 10px;
   object-fit: cover;
   position: relative;
+  transition: 0.8s;
+}
+
+.cards__item:hover {
+  transform: scale(1.03);
 }
