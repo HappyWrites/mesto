@@ -54,7 +54,16 @@ const enableValidation = (validationPar) => {
   });
 };
 
-const initialPar = {
+function resetErrorForm(form, validationParam) {
+  const inputList = Array.from(form.querySelectorAll(validationParam.inputSelector));
+  const submitButton = form.querySelector(validationParam.submitButtonSelector);
+  inputList.forEach(function (inputElement) {
+    hideInputError(form, inputElement, initialConfig);
+  })
+  toggleButtonState(inputList, submitButton, validationParam.inactiveButtonClass);
+};
+
+const initialConfig = {
   formSelector: '.form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__save',
@@ -63,4 +72,4 @@ const initialPar = {
   errorClass: 'popup__input-error_active',
 }
 
-enableValidation(initialPar);
+enableValidation(initialConfig);

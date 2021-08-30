@@ -39,7 +39,7 @@ function openPopupEditProfile() {
   openPopup(popupEditProfile);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  resetErrorForm(popupEditProfile, initialPar);
+  resetErrorForm(popupEditProfile, initialConfig);
 }
 
 popupButtonEditProfile.addEventListener('click', openPopupEditProfile);
@@ -61,16 +61,16 @@ formElementEditProfile.addEventListener('submit', editProfile);
 function createCard(name, link) {
   const newCard = cardTemplate.querySelector('.cards__item').cloneNode(true);
   const cardName = newCard.querySelector('.cards__title');
-  const cardLink = newCard.querySelector('.cards__image');
+  const cardImage = newCard.querySelector('.cards__image');
 
   newCard.querySelector('.cards__like').addEventListener('click', pressLike);
   newCard.querySelector('.cards__trash').addEventListener('click', deleteCard);
-  cardLink.addEventListener('click', () => handlePreviewPicture(cardName, cardLink));
+  cardImage.addEventListener('click', () => handlePreviewPicture(cardName, cardImage));
 
 
   cardName.textContent = name;
-  cardLink.src = link;
-  cardLink.alt = name;
+  cardImage.src = link;
+  cardImage.alt = name;
 
   return newCard;
 }
@@ -86,10 +86,8 @@ initialCards.forEach(card => renderCard(card));
 //открытие попапа с контентом//
 const openPopupAddContent = () => {
   openPopup(popupAdd);
-  placeInput.value = '';
-  linkInput.value = '';
-  resetErrorForm(popupAdd, initialPar);
-
+  formAdd.reset();  
+  resetErrorForm(popupAdd, initialConfig);
 }
 
 //добавление карточки через форму//
@@ -143,18 +141,9 @@ popupImage.addEventListener('click', closePopupClickOverlay);
 
 //закрытие попапа на ESC//
 function closePopupEsc(evt) {
-  const activePopup = document.querySelector('.popup_is-opened');
-
   if (evt.key === 'Escape') {
+    const activePopup = document.querySelector('.popup_is-opened');
     closePopup(activePopup);
   }
 };
 
-function resetErrorForm(form, validationParam) {
-  const inputList = Array.from(form.querySelectorAll(validationParam.inputSelector));
-  const submitButton = form.querySelector(validationParam.submitButtonSelector);
-  inputList.forEach(function (inputElement) {
-    hideInputError(form, inputElement, initialPar);
-  })
-  toggleButtonState(inputList, submitButton, validationParam.inactiveButtonClass);
-};
