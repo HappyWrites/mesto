@@ -44,11 +44,11 @@
       <form class="form popup__container popup__container_type_edit-profile" name="name-job">
         <button class="popup__close popup__close_type_edit" type="button"></button>
         <h3 class="popup__title">Редактировать профиль</h3>
-        <input id="name-input"  class="popup__input popup__input_type_name" required minlength="2" maxlength="40" type="text"
-          placeholder="Жак-Ив Кусто" name="name" value="Жак-Ив Кусто">
+        <input id="name-input" class="popup__input popup__input_type_name" required minlength="2" maxlength="40"
+          type="text" placeholder="Жак-Ив Кусто" name="name" value="Жак-Ив Кусто">
         <span class="name-input-error popup__input-error"></span>
-        <input id="about-input" class="popup__input popup__input_type_about-me" required minlength="2" maxlength="200" type="text"
-          placeholder="Исследователь океана" name="about-me" value="Исследователь океана">
+        <input id="about-input" class="popup__input popup__input_type_about-me" required minlength="2" maxlength="200"
+          type="text" placeholder="Исследователь океана" name="about-me" value="Исследователь океана">
         <span class="about-input-error popup__input-error"></span>
         <button class="popup__save popup__save_type_edit" type="submit">Сохранить</button>
       </form>
@@ -58,11 +58,11 @@
       <form class="form popup__container popup__container_type_add" name="name-link">
         <button class="popup__close popup__close-add" type="button"></button>
         <h3 class="popup__title">Новое место</h3>
-        <input id="place-input" class="popup__input popup__input_type_name popup__input_type_place" required minlength="2" maxlength="30"
-          type="text" placeholder="Название" name="place">
+        <input id="place-input" class="popup__input popup__input_type_name popup__input_type_place" required
+          minlength="2" maxlength="30" type="text" placeholder="Название" name="place">
         <span class="place-input-error popup__input-error"></span>
-        <input id="link-input" class="popup__input popup__input_type_about-me popup__input_type_link" required type="url"
-          placeholder="Ссылка на картинку" name="link">
+        <input id="link-input" class="popup__input popup__input_type_about-me popup__input_type_link" required
+          type="url" placeholder="Ссылка на картинку" name="link">
         <span class="link-input-error popup__input-error"></span>
         <button class="popup__save popup__save_type_add" type="submit">Создать</button>
       </form>
@@ -91,9 +91,9 @@
       <button class="cards__trash" type="button"></button>
     </li>
   </template>
-  <script src="./scripts/cards.js" defer></script>
-  <script src="./scripts/validate.js" defer></script>
-  <script src="./scripts/index.js" defer></script>  
+  <script type="module" src="./scripts/Card.js" defer></script>
+  <script type="module" src="./scripts/FormValidator.js" defer></script>
+  <script type="module" src="./scripts/index.js" defer></script>
 </body>
 
 </html>
