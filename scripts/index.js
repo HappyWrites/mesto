@@ -50,11 +50,17 @@ const popupImage = document.querySelector('.popup_type_image');
 const popupPicture = popupImage.querySelector('.popup__picture');
 const popupTitleImage = popupImage.querySelector('.popup__title');
 
-function renderCard(card) {
+function createCard(card) {
   const newCard = new Card(card.name, card.link, config, '#cards-list-template', handlePreviewPicture);
   const cardElement = newCard.createCard();
-  cardsList.prepend(cardElement);
+
+  return cardElement;
 }
+
+function renderCard(card) {
+  cardsList.prepend(createCard(card));
+}
+
 
 initialCards.forEach(card => renderCard(card));
 
@@ -82,7 +88,7 @@ function openPopupEditProfile() {
   openPopup(popupEditProfile);
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  formValidatorForPopupEditProfile.resetErrorForm(popupEditProfile);
+  formValidatorForPopupEditProfile.resetErrorForm();
 }
 
 popupButtonEditProfile.addEventListener('click', openPopupEditProfile);
@@ -103,7 +109,7 @@ formElementEditProfile.addEventListener('submit', editProfile);
 const openPopupAddContent = () => {
   openPopup(popupAdd);
   formAdd.reset();
-  formValidatorForPopupAddCard.resetErrorForm(popupAdd);
+  formValidatorForPopupAddCard.resetErrorForm();
 }
 
 //добавление карточки через форму//
