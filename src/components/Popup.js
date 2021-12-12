@@ -1,7 +1,7 @@
 import { config } from "../utils/config.js";
 
 export class Popup {
-  constructor(popupSelector, resetErrorForm) {
+  constructor(popupSelector) {
     this._popup = document.querySelector(popupSelector);
   }
 

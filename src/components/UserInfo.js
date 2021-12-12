@@ -5,8 +5,7 @@ export class UserInfo {
   }
 
   getUserInfo() {
-    const data = { name: this._name.textContent, about: this._about.textContent };
-    return data;
+    return { name: this._name.textContent, about: this._about.textContent };
   }
 
   setUserInfo(info) {

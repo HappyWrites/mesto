@@ -14,8 +14,11 @@ export const config = {
   popupImage: '.popup__picture',
   popupTitleImage: '.popup__title_type_image',
   popupTypeImage: '.popup_type_image',
+  popupEditProfile: '.popup_type_edit-profile',
   formTypeEditProfile: '.popup__container_type_edit-profile',
   formTypeAddCard: '.popup__container_type_add',
-  popupTypeAddCard: '.popup_type_add',  
+  popupTypeAddCard: '.popup_type_add',
+  profileName: '.profile__name',
+  profileJob: '.profile__about-me'
 }
 

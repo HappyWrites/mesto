@@ -7,14 +7,13 @@ export class PopupWithForm extends Popup {
     this._form = this._popup.querySelector(config.formSelector);
     this._inputList = this._form.querySelectorAll(config.inputSelector);
     this._resetErrorForm = resetErrorForm;
-    this._submiter = submitCallback;
-    this._getter = getterCallback;
+    this._submitCallback = submitCallback;
+    this._getterCallBack = getterCallback;
   }
 
   openPopup() {
-    super.openPopup();
-    this._resetErrorForm();
-    if (this._getter) {
+    super.openPopup();    
+    if (this._getterCallBack) {
       const data = this._getter();
       this._inputList.forEach((input) => {
         input.value = data[input.name];
@@ -40,7 +39,7 @@ export class PopupWithForm extends Popup {
 
       const values = this._getInputValues();
 
-      this._submiter(values)
+      this._submitCallback(values)
 
       this.closePopup();
     })
@@ -49,6 +48,7 @@ export class PopupWithForm extends Popup {
   closePopup() {
     super.closePopup();
     this._form.reset();
+    this._resetErrorForm();
   }
 }
 
