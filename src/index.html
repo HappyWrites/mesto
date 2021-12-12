@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MESTO</title>
+</head>
+
+<body class="body">
+  <div class="page">
+    <header class="header">
+      <a href="#" target="_blank">
+        <img src="../images/logo-svg.svg" class="header__logo" alt="Логотип">
+      </a>
+    </header>
+  
+    <main class="content">
+      <section class="profile">
+        <div class="profile__data">
+          <img class="profile__image" src="./images/avatar.png" alt="аватар">
+          <div class="profile__info">
+            <div class="profile__edit-name">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit" type="button"></button>
+            </div>
+            <p class="profile__about-me">Исследователь океана</p>
+          </div>
+        </div>
+        <button class="profile__add" type="button"></button>
+      </section>
+
+      <section class="cards">
+        <ul class="cards__items">
+        </ul>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="footer__author">&copy; 2021 Anastasia Nazarova</p>
+    </footer>
+
+    <section class="popup popup_type_edit-profile">
+      <form class="form popup__container popup__container_type_edit-profile" name="name-job">
+        <button class="popup__close popup__close_type_edit" type="button"></button>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <input id="name-input" class="popup__input popup__input_type_name" required minlength="2" maxlength="40"
+          type="text" placeholder="Жак-Ив Кусто" name="name" value="Жак-Ив Кусто">
+        <span class="name-input-error popup__input-error"></span>
+        <input id="about-input" class="popup__input popup__input_type_about-me" required minlength="2" maxlength="200"
+          type="text" placeholder="Исследователь океана" name="about" value="Исследователь океана">
+        <span class="about-input-error popup__input-error"></span>
+        <button class="popup__save popup__save_type_edit" type="submit">Сохранить</button>
+      </form>
+    </section>
+
+    <section class="popup popup_type_add">
+      <form class="form popup__container popup__container_type_add" name="name-link">
+        <button class="popup__close popup__close-add" type="button"></button>
+        <h3 class="popup__title">Новое место</h3>
+        <input id="place-input" class="popup__input popup__input_type_name popup__input_type_place" required
+          minlength="2" maxlength="30" type="text" placeholder="Название" name="name">
+        <span class="place-input-error popup__input-error"></span>
+        <input id="link-input" class="popup__input popup__input_type_about-me popup__input_type_link" required
+          type="url" placeholder="Ссылка на картинку" name="link">
+        <span class="link-input-error popup__input-error"></span>
+        <button class="popup__save popup__save_type_add" type="submit">Создать</button>
+      </form>
+    </section>
+
+    <section class="popup popup_type_image">
+      <div class="popup__container popup__container_type_image">
+        <button class="popup__close popup__close_type_image" type="button"></button>
+        <img
+          src="https://images.unsplash.com/photo-1626515728846-d09aacfee23d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80"
+          alt="Исландия" class="popup__picture">
+        <h3 class="popup__title popup__title_type_image">Швейцария</h3>
+      </div>
+    </section>
+  </div>
+
+  <template id="cards-list-template">
+    <li class="cards__item">
+      <img
+        src="https://images.unsplash.com/photo-1626515728846-d09aacfee23d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80"
+        alt="" class="cards__image">
+      <div class="cards__content">
+        <h2 class="cards__title"></h2>
+        <button class="cards__like" type="button"></button>
+      </div>
+      <button class="cards__trash" type="button"></button>
+    </li>
+  </template>
+</body>
+
+</html>
