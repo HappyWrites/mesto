@@ -12,6 +12,10 @@ const formElementEditProfile = document.querySelector('.popup__container_type_ed
 const formAdd = document.querySelector('.popup__container_type_add');
 const buttonAddCard = document.querySelector('.profile__add');
 const buttonEditProfile = document.querySelector('.profile__edit');
+const inputName = document.querySelector('.popup__input_type_name');
+const inputJob = document.querySelector('.popup__input_type_about-me');
+
+
 
 
 const popupWithImage = new PopupWithImage(config.popupTypeImage);
@@ -53,11 +57,23 @@ popupWithFormAddCard.setEventListeners();
 
 
 const newUserInfo = new UserInfo(config.profileName, config.profileJob);
-const popupWithFormEditProfile = new PopupWithForm(config.popupEditProfile, () => formValidatorForPopupAddCard.resetErrorForm(), editProfileViaForm, () => newUserInfo.getUserInfo())
+const popupWithFormEditProfile = new PopupWithForm(config.popupEditProfile, () => formValidatorForPopupAddCard.resetErrorForm(), editProfileViaForm)
 
 function editProfileViaForm(input) {
   newUserInfo.setUserInfo(input);
 }
 
-buttonEditProfile.addEventListener('click', () => popupWithFormEditProfile.openPopup())
+const insertDataInInputs = () => {
+  const data = newUserInfo.getUserInfo()
+  inputName.value = data.name;
+  inputJob.value = data.about;
+}
+
+buttonEditProfile.addEventListener('click', () => (insertDataInInputs(), popupWithFormEditProfile.openPopup()))
 popupWithFormEditProfile.setEventListeners();
+
+
+
+
+
+

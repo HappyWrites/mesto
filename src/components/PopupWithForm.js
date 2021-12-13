@@ -2,23 +2,12 @@ import { Popup } from '../components/Popup.js';
 import { config } from '../utils/config.js';
 
 export class PopupWithForm extends Popup {
-  constructor(popupSelector, resetErrorForm, submitCallback, getterCallback = null) {
+  constructor(popupSelector, resetErrorForm, submitCallback) {
     super(popupSelector);
     this._form = this._popup.querySelector(config.formSelector);
     this._inputList = this._form.querySelectorAll(config.inputSelector);
     this._resetErrorForm = resetErrorForm;
     this._submitCallback = submitCallback;
-    this._getterCallBack = getterCallback;
-  }
-
-  openPopup() {
-    super.openPopup();    
-    if (this._getterCallBack) {
-      const data = this._getter();
-      this._inputList.forEach((input) => {
-        input.value = data[input.name];
-      });
-    }
   }
 
   _getInputValues() {
