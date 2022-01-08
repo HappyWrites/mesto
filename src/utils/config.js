@@ -19,6 +19,10 @@ export const config = {
   formTypeAddCard: '.popup__container_type_add',
   popupTypeAddCard: '.popup_type_add',
   profileName: '.profile__name',
-  profileJob: '.profile__about-me'
+  profileJob: '.profile__about-me',
+  profileAvatar: '.profile__image',
+  popupDeleteCard: '.popup_type_trash',
+  cardsLikeCounter: '.cards__count-like',
+  popupEditAvatar: '.popup_type_edit-avatar'
 }
 

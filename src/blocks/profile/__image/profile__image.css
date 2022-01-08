@@ -1,5 +1,6 @@
 .profile__image {
   width: 120px;
+  height: 120px;
   margin-top: 42px;
   object-fit: cover;
   border-radius: 50%;
@@ -12,4 +13,3 @@
     margin-right: 30px;
   }
 }
-

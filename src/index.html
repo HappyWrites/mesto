@@ -18,7 +18,9 @@
     <main class="content">
       <section class="profile">
         <div class="profile__data">
-          <img class="profile__image" src="<%=require('./images/avatar.png')%>" alt="аватар">
+          <button class="profile__avatar-button" type="button">
+            <img class="profile__image" src="<%=require('./images/avatar.png')%>" alt="аватар">
+          </button>
           <div class="profile__info">
             <div class="profile__edit-name">
               <h1 class="profile__name">Жак-Ив Кусто</h1>
@@ -76,6 +78,25 @@
         <h3 class="popup__title popup__title_type_image">Швейцария</h3>
       </div>
     </section>
+
+    <section class="popup popup_type_trash">
+      <form class="form popup__container popup__container_type_trash">
+        <button class="popup__close popup__close_type_trash" type="button"></button>
+        <h3 class="popup__title popup__title_type_trash">Вы уверены?</h3>
+        <button class="popup__save popup__save_type_trash" type="submit">Да</button>
+      </form>
+    </section>
+
+    <section class="popup popup_type_edit-avatar">
+      <form class="form popup__container popup__container_type_edit-avatar" name="avatar">
+        <button class="popup__close popup__close-avatar" type="button"></button>
+        <h3 class="popup__title">Обновить аватар</h3>
+        <input id="avatar-input" class="popup__input popup__input_type_avatar" required minlength="2" maxlength="150"
+          type="text" placeholder="Ссылка" name="avatar">
+        <span class="avatar-input-error popup__input-error"></span>
+        <button disabled class="popup__save popup__save_type_edit-avatar" type="submit">Сохранить</button>
+      </form>
+    </section>
   </div>
 
   <template id="cards-list-template">
@@ -85,7 +106,10 @@
         alt="" class="cards__image">
       <div class="cards__content">
         <h2 class="cards__title"></h2>
-        <button class="cards__like" type="button"></button>
+        <div class="cards__like-container">
+          <button class="cards__like" type="button"></button>
+          <p class="cards__count-like">0</p>
+        </div>
       </div>
       <button class="cards__trash" type="button"></button>
     </li>
