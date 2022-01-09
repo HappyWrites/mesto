@@ -38,7 +38,7 @@ const popupWithFormEditAvatar = new PopupWithForm(config.popupEditAvatar, () => 
 Promise.all([api.getUserInfo(), api.getInitialCards()])
   .then(([userData, cards]) => {
     newUserInfo.setUserInfo(userData)
-    cardsList.renderItems(cards);
+    cardsList.renderItems(cards.reverse());
   })
   .catch((err) => {
     console.log(err);
@@ -64,12 +64,15 @@ function editProfileViaForm(input) {
   renderLoading(true);
   api.transferUserInfo(input)
     .then((result) => {
-      renderLoading(false);
-      newUserInfo.setUserInfo(result)
+      newUserInfo.setUserInfo(result);
+      popupWithFormEditProfile.closePopup();
     })
     .catch((err) => {
       console.log(err);
-    });
+    })
+    .finally(() => {
+      renderLoading(false);
+    })
 }
 
 const insertDataInInputs = () => {
@@ -82,12 +85,15 @@ function addCardViaForm(input) {
   renderLoading(true);
   api.addCard(input)
     .then((result) => {
-      renderLoading(false);
       cardsList.addItem(createCard(result));
+      popupWithFormAddCard.closePopup();
     })
     .catch((err) => {
       console.log(err);
-    });
+    })
+    .finally(() => {
+      renderLoading(false);
+    })
 };
 
 function renderLoading(isLoading) {
@@ -103,7 +109,7 @@ function handleOpenPopupDeleteCard(card) {
 }
 
 function handleDeleteCard(card) {
-  api.deleteCard(card._getCardId())
+  api.deleteCard(card.getCardId())
     .then(() => {
       card.deleteCard()
       popupDeleteCard.closePopup()
@@ -114,9 +120,10 @@ function handleDeleteCard(card) {
 }
 
 function handleAddLike(card) {
-  api.addLike(card._getCardId())
+  api.addLike(card.getCardId())
     .then((res) => {
-      card._getNumberLikes(res)
+      card.getNumberLikes(res);
+      card.appendLike();
     })
     .catch((err) => {
       console.log(err);
@@ -124,9 +131,10 @@ function handleAddLike(card) {
 }
 
 function handleDeleteLike(card) {
-  api.deleteLike(card._getCardId())
+  api.deleteLike(card.getCardId())
     .then((res) => {
-      card._getNumberLikes(res)
+      card.getNumberLikes(res);
+      card.removeLike();
     })
     .catch((err) => {
       console.log(err);
@@ -138,12 +146,14 @@ function editAvatarViaForm(input) {
   api.editAvatar(input)
     .then((result) => {
       newUserInfo.setUserInfo(result);
-      renderLoading(false);
       popupWithFormEditAvatar.closePopup();
     })
     .catch((err) => {
       console.log(err);
-    });
+    })
+    .finally(() => {
+      renderLoading(false)
+    })
 }
 
 buttonEditProfile.addEventListener('click', () => (insertDataInInputs(), popupWithFormEditProfile.openPopup()))

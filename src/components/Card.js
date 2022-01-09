@@ -47,9 +47,9 @@ export class Card {
 
     this._elementLike.addEventListener('click', () => {
       if (this._elementLike.classList.contains(this._config.cardsLikeActive)) {
-        this._removeLike();
+        this._handleRemoveLike();
       } else {
-        this._appendLike();
+        this._handleAppendLike();
       }
     });
 
@@ -66,7 +66,7 @@ export class Card {
     this._openPopupDeleteCard(this)
   }
 
-  _getCardId() {
+  getCardId() {
     return this._cardId;
   }
 
@@ -79,23 +79,29 @@ export class Card {
     this._openPopupWithImage({ name: this._name, link: this._link });
   }
 
-  _getNumberLikes(info) {
+  getNumberLikes(info) {
     this._element.querySelector(this._config.cardsLikeCounter).textContent = info.likes.length;
   }
 
   _checkLike() {
     if (this._likes.some(({ _id }) => _id === this._userId)) {
-      this._appendLike();
+      this.appendLike();
     }
   }
 
-  _appendLike() {
+  appendLike() {
     this._elementLike.classList.add(this._config.cardsLikeActive);
+  }
+
+  _handleAppendLike() {
     this._addLike(this)
   }
 
-  _removeLike() {
+  removeLike() {
     this._elementLike.classList.remove(this._config.cardsLikeActive);
+  }
+
+  _handleRemoveLike() {
     this._deleteLike(this)
   }
 };

@@ -29,8 +29,6 @@ export class PopupWithForm extends Popup {
       const values = this._getInputValues();
 
       this._submitCallback(values)
-
-      this.closePopup();
     })
   }
 
